@@ -9,7 +9,7 @@
 				<headerContent>
 					<Button type="Emphasized" press=".onPress" text="{i18n>loadFirstItems}"/>
 				</headerContent>
-				<List id="list" items="{/Meetups}" noDataText="{i18n>noDataText}">
+				<List id="list" items="{/FindUpcomingMeetups}" noDataText="{i18n>noDataText}">
 					<items>
 						<ObjectListItem
 							number="{
