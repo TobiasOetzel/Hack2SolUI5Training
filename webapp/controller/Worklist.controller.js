@@ -1,11 +1,11 @@
 sap.ui.define([
-    './BaseController',
-    'sap/ui/model/json/JSONModel',
-    '../model/formatter',
-    '../model/FlaggedType',
-    'sap/m/library'
-], function(BaseController, JSONModel, formatter, FlaggedType, mobileLibrary) {
-    "use strict";
+	'./BaseController',
+	'sap/ui/model/json/JSONModel',
+	'../model/formatter',
+	'../model/FlaggedType',
+	'sap/m/library'
+], function (BaseController, JSONModel, formatter, FlaggedType, mobileLibrary) {
+	"use strict";
 
 	return BaseController.extend("sap.ui.demo.bulletinboard.controller.Worklist", {
 		types : {
@@ -123,4 +123,5 @@ sap.ui.define([
 			);
 		}
 	});
+
 });
