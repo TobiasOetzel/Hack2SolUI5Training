@@ -76,7 +76,7 @@ sap.ui.define([
 					var oSortItem = oEvent.getParameter("sortItem");
 					this._oRouterArgs.query.sortField = oSortItem.getKey();
 					this._oRouterArgs.query.sortDescending = oEvent.getParameter("sortDescending");
-					delete this._oRouterArgs.query.showDialog;		//else we would see the dialog again
+					delete this._oRouterArgs.query.showDialog;
 					oRouter.navTo("employeeOverview",this._oRouterArgs, true /*without history*/);
 				}.bind(this),
 				cancel : function (oEvent){
@@ -120,7 +120,7 @@ sap.ui.define([
 			if (sSearchQuery && sSearchQuery.length > 0) {
 				aFilters.push(new Filter("FirstName", FilterOperator.Contains, sSearchQuery));
 				aFilters.push(new Filter("LastName", FilterOperator.Contains, sSearchQuery));
-				oFilter = new Filter({ filters: aFilters, and: false });  // OR filter
+				oFilter = new Filter({ filters: aFilters, and: false });  //OR filter
 			} else {
 				oFilter = null;
 			}
