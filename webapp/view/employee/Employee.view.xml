@@ -19,6 +19,7 @@
 					<Toolbar>
 						<Title text="{i18n>EmployeeIDColon} {EmployeeID}" level="H2"/>
 						<ToolbarSpacer />
+						<Link text="{i18n>FlipToResume}" tooltip="{i18n>FlipToResume.tooltip}" press=".onShowResume"/>
 					</Toolbar>
 				</headerToolbar>
 				<content>
