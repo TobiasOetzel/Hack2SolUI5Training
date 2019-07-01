@@ -1,0 +1,11 @@
+Description=ES4 Demo service
+Type=HTTP
+Authentication=BasicAuthentication
+WebIDEUsage=odata_gen
+Name=ES4
+WebIDEEnabled=false
+CloudConnectorVersion=2
+ProxyType=Internet
+URL=https\://sapes4.sapdevcenter.com
+User=YourUser
+WebIDESystem=ES4
