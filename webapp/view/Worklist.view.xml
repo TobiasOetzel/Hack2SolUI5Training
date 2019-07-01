@@ -22,6 +22,9 @@
 					sorter: {
 						path: 'ProductName',
 						descending: false
+					},
+					parameters: {
+						'expand': 'Supplier'
 					}
 				}"
 				noDataText="{worklistView>/tableNoDataText}"
@@ -29,7 +32,6 @@
 				growing="true"
 				growingScrollToLoad="true"
 				updateFinished=".onUpdateFinished">
-
 				<headerToolbar>
 					<Toolbar>
 						<Title id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
@@ -43,13 +45,37 @@
 					</Toolbar>
 				</headerToolbar>
 
-				<columns>
-					<Column id="nameColumn">
-						<Text text="{i18n>tableNameColumnTitle}" id="nameColumnTitle"/>
-					</Column>
-					<Column id="unitNumberColumn" hAlign="End">
-						<Text text="{i18n>tableUnitNumberColumnTitle}" id="unitNumberColumnTitle"/>
-					</Column>
+					<columns>
+						<Column id="nameColumn">
+							<Text
+								id="nameColumnTitle"
+								text="{i18n>TableNameColumnTitle}"/>
+						</Column>
+						<Column
+							id="supplierNameColumn"
+							demandPopin="false"
+							minScreenWidth="Tablet">
+							<Text text="{i18n>TableSupplierColumnTitle}"/>
+						</Column>
+						<Column
+							id="unitPriceColumn"
+							hAlign="End"
+							demandPopin="true"
+							minScreenWidth="Tablet">
+							<Text text="{i18n>TablePriceColumnTitle}"/>
+						</Column>
+						<Column
+							id="unitsOnOrderColumn"
+							demandPopin="true"
+							minScreenWidth="Tablet"
+							hAlign="End">
+							<Text text="{i18n>TableUnitsOrderedColumnTitle}"/>
+						</Column>
+						<Column
+							id="unitsInStockColumn"
+							hAlign="End">
+							<Text text="{i18n>TableUnitsInStockColumnTitle}"/>
+						</Column>
 				</columns>
 
 				<items>
@@ -59,11 +85,25 @@
 						<cells>
 							<ObjectIdentifier
 								title="{ProductName}"/>
+							<Text text = "{Supplier/CompanyName}"/>
+							<ObjectNumber
+								unit="EUR"
+								number="{
+									path: 'UnitPrice',
+									formatter: '.formatter.numberUnit'}"/>
+							<ObjectNumber
+								number="{
+									path: 'UnitsOnOrder',
+									formatter: '.formatter.numberUnit'}"
+									unit="PC"/>
 							<ObjectNumber
 								number="{
 									path: 'UnitsInStock',
-									formatter: '.formatter.numberUnit'
-								}"/>
+									formatter: '.formatter.numberUnit'}"
+								unit="PC"
+								state="{
+									path: 'UnitsInStock',
+									formatter: '.formatter.quantityState'}"/>
 						</cells>
 					</ColumnListItem>
 				</items>
