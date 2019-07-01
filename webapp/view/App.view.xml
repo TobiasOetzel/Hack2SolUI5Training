@@ -1,4 +1,5 @@
 <mvc:View
+	controllerName="sap.ui.demo.db.controller.App"
 	xmlns="sap.m"
 	xmlns:l="sap.ui.layout"
 	xmlns:mvc="sap.ui.core.mvc">
@@ -16,6 +17,15 @@
 			<l:VerticalLayout>
 				<Label class="sapUiSmallMargin" text="{i18n>address}:"/>
 				<FormattedText class="sapUiSmallMarginBegin sapUiSmallMarginBottom" htmlText="{/address/street}&lt;br&gt;{/address/zip} {/address/city}&lt;br&gt;{/address/country}" width="200px"/>
+				<Link class="sapUiSmallMarginBegin"
+					href="{
+							parts: [
+								'/firstName',
+								'/lastName'
+							],
+							formatter: '.formatMail'
+						}"
+					text="{i18n>sendEmail}"/>
 			</l:VerticalLayout>
 		</content>
 	</Panel>
