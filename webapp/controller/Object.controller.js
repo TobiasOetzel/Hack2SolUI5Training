@@ -2,13 +2,12 @@ sap.ui.define([
 	"./BaseController",
 	"sap/ui/model/json/JSONModel",
 	"sap/ui/core/routing/History",
-	"mycompany/myapp/MyWorklistApp/model/formatter"
+	"mycompany/myapp/MyWorklistApp/model/formatter",
+	"sap/ui/core/format/DateFormat",
+	"sap/ui/model/Filter",
+	"sap/ui/model/FilterOperator"
 ], function (
-	BaseController,
-	JSONModel,
-	History,
-	formatter
-) {
+	BaseController, JSONModel, History, formatter, DateFormat, Filter, FilterOperator) {
 	"use strict";
 
 	return BaseController.extend("mycompany.myapp.MyWorklistApp.controller.Object", {
@@ -137,6 +136,36 @@ sap.ui.define([
 			oResourceBundle.getText("shareSendEmailObjectSubject", [sObjectId]));
 			oViewModel.setProperty("/shareSendEmailMessage",
 			oResourceBundle.getText("shareSendEmailObjectMessage", [sObjectName, sObjectId, location.href]));
+
+			// Update the comments in the list
+			var oList = this.byId("idCommentsList");
+			var oBinding = oList.getBinding("items");
+			oBinding.filter(new Filter("productID", FilterOperator.EQ, sObjectId));
+		},
+
+		/**
+		 * Updates the model with the user comments on Products.
+		 * @function
+		 * @param {sap.ui.base.Event} oEvent object of the user input
+		 */
+		onPost: function (oEvent) {
+			var oFormat = DateFormat.getDateTimeInstance({style: "medium"});
+			var sDate = oFormat.format(new Date());
+			var oObject = this.getView().getBindingContext().getObject();
+			var sValue = oEvent.getParameter("value");
+			var oEntry = {
+				productID: oObject.ProductID,
+				type: "Comment",
+				date: sDate,
+				comment: sValue
+			};
+			// update model
+			var oFeedbackModel = this.getModel("productFeedback");
+			var aEntries = oFeedbackModel.getData().productComments;
+			aEntries.push(oEntry);
+			oFeedbackModel.setData({
+				productComments : aEntries
+			});
 		}
 
 	});

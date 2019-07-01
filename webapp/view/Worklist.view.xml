@@ -11,7 +11,7 @@
 		showFooter="true">
 
 		<semantic:titleHeading>
-			<Title text="{i18n>worklistTitle}"/>
+			<Title text="{i18n>worklistTitle}" />
 		</semantic:titleHeading>
 
 		<semantic:content>

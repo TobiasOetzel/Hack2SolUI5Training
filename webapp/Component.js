@@ -28,6 +28,9 @@ sap.ui.define([
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
 
+			// set the product feedback model
+			this.setModel(models.createCommentsModel(), "productFeedback");
+
 			// create the views based on the url/hash
 			this.getRouter().initialize();
 		},
