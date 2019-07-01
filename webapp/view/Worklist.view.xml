@@ -7,10 +7,11 @@
 	<semantic:SemanticPage
 		id="page"
 		headerPinnable="false"
-		toggleHeaderOnTitleClick="false">
+		toggleHeaderOnTitleClick="false"
+		showFooter="true">
 
 		<semantic:titleHeading>
-			<Title text="{i18n>worklistTitle}" />
+			<Title text="{i18n>worklistTitle}"/>
 		</semantic:titleHeading>
 
 		<semantic:content>
@@ -54,6 +55,7 @@
 						noDataText="{worklistView>/tableNoDataText}"
 						updateFinished=".onUpdateFinished"
 						width="auto"
+						mode="MultiSelect"
 						items="{
 							path: '/Products',
 							sorter: {
@@ -146,5 +148,11 @@
 		<semantic:sendEmailAction>
 			<semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
 		</semantic:sendEmailAction>
+		<semantic:positiveAction>
+			<semantic:PositiveAction text="{i18n>TableProductsReorder}" press=".onUpdateStockObjects"/>
+		</semantic:positiveAction>
+		<semantic:negativeAction>
+			<semantic:NegativeAction text="{i18n>TablePorductsUnlist}" press=".onUnlistObjects"/>
+		</semantic:negativeAction>
 	</semantic:SemanticPage>
 </mvc:View>
