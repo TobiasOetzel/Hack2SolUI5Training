@@ -22,6 +22,9 @@ sap.ui.define([
 			// call the base component's init function
 			UIComponent.prototype.init.apply(this, arguments);
 
+			// allow saving values to the OData model
+			this.getModel().setDefaultBindingMode("TwoWay");
+
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
 
