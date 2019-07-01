@@ -26,7 +26,7 @@
 						expanded="{=! ${device>/system/phone}}"
 						class="sapUiNoContentPadding">
 				<items>
-					<IconTabFilter icon="sap-icon://hint" key="info" >
+					<IconTabFilter icon="sap-icon://hint" key="info">
 						<form:SimpleForm layout="ResponsiveGridLayout">
 							<form:content>
 								<Label text="{i18n>postDateLabel}"/>
@@ -37,7 +37,7 @@
 						</form:SimpleForm>
 					</IconTabFilter>
 					<IconTabFilter icon="sap-icon://inspection" key="statistics">
-						<Text text="{i18n>viewedManyTimes}" id="viewCounter" class="sapUiSmallMargin"/>
+						<Text text="Viewed 55555 times" id="viewCounter"/>
 					</IconTabFilter>
 				</items>
 			</IconTabBar>
