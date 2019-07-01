@@ -101,7 +101,6 @@ sap.ui.define([
 			oBinding.filter(aFilter);
 		},
 
-
 		/**
 		 * Event handler when a table item gets pressed
 		 * @param {sap.ui.base.Event} oEvent the table selectionChange event
