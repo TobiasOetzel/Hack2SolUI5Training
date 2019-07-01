@@ -72,7 +72,7 @@ sap.ui.define([
 				query: {
 					tab : oEvent.getParameter("selectedKey")
 				}
-			}, true /*without history*/);
+			},true /*without history*/);
 		}
 
 	});

@@ -7,7 +7,6 @@ sap.ui.define([
 	return BaseController.extend("sap.ui.demo.nav.controller.App", {
 
 		onInit: function () {
-
 			// This is ONLY for being used within the tutorial.
 			// The default log level of the current running environment may be higher than INFO,
 			// in order to see the debug info in the console, the log level needs to be explicitly
@@ -24,6 +23,12 @@ sap.ui.define([
 				Log.info("Sorry, but the hash '" + sHash + "' is invalid.", "The resource was not found.");
 			});
 
+			oRouter.attachRouteMatched(function (oEvent){
+				var sRouteName = oEvent.getParameter("name");
+				// do something, i.e. send usage statistics to backend
+				// in order to improve our app and the user experience (Build-Measure-Learn cycle)
+				Log.info("User accessed route " + sRouteName + ", timestamp = " + new Date().getTime());
+			});
 		}
 
 	});

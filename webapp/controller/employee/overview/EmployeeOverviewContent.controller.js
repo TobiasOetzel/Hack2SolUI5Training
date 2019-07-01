@@ -120,7 +120,7 @@ sap.ui.define([
 			if (sSearchQuery && sSearchQuery.length > 0) {
 				aFilters.push(new Filter("FirstName", FilterOperator.Contains, sSearchQuery));
 				aFilters.push(new Filter("LastName", FilterOperator.Contains, sSearchQuery));
-				oFilter = new Filter({ filters: aFilters, and: false });  //OR filter
+				oFilter = new Filter({ filters: aFilters, and: false });  // OR filter
 			} else {
 				oFilter = null;
 			}
