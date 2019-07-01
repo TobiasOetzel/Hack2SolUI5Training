@@ -3,7 +3,7 @@ sap.ui.define([
 	'sap/ui/test/matchers/Properties',
 	'sap/ui/test/actions/Press'
 ], function (Opa5, Properties, Press) {
-		"use strict";
+	"use strict";
 
 		var sViewName = "Post";
 
