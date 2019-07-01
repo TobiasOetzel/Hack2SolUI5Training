@@ -4,14 +4,6 @@
 	xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true">
 	<Shell>
-		<App id="app">
-			<pages>
-				<Page>
-					<content>
-						<Button text="{i18n>iWantToNavigate}" class="sapUiTinyMarginEnd"/>
-					</content>
-				</Page>
-			</pages>
-		</App>
+		<App id="app"/>
 	</Shell>
 </mvc:View>
