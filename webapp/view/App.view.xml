@@ -12,8 +12,7 @@
 			<CheckBox selected="{/enabled}" text="Enabled"/>
 		</content>
 	</Panel>
-	<Panel headerText="{i18n>panel2HeaderText}" class="sapUiResponsiveMargin"
-		width="auto">
+	<Panel headerText="{i18n>panel2HeaderText}" class="sapUiResponsiveMargin" width="auto">
 		<content>
 			<l:HorizontalLayout>
 				<l:VerticalLayout>
@@ -46,36 +45,41 @@
 	</Panel>
 	<Panel headerText="{i18n>panel3HeaderText}" class="sapUiResponsiveMargin" width="auto">
 		<content>
-			<List headerText="{i18n>productListTitle}" items="{products>/Products}">
-				<items>
-					<ObjectListItem
-						press=".onItemSelected"
+			<List
+				id="ProductList"
+				headerText="{i18n>productListTitle}"
+				items="{
+					path: 'products>/Products',
+					factory: '.productListFactory'
+				}">
+				<dependents>
+					<StandardListItem
+						id="productSimple"
+						icon="sap-icon://warning"
+						title="{products>ProductName} ({products>QuantityPerUnit})"
+						info="{i18n>Discontinued}"
 						type="Active"
-						title="{products>ProductName}"
+						infoState="Error"
+						press=".onItemSelected">
+					</StandardListItem>
+					<ObjectListItem
+						id="productExtended"
+						title="{products>ProductName} ({products>QuantityPerUnit})"
 						number="{
 							parts: [
 								{path: 'products>UnitPrice'},
 								{path: '/currencyCode'}
 							],
 							type: 'sap.ui.model.type.Currency',
-							formatOptions: { showMeasure: false }
+							formatOptions : {
+								showMeasure : false
+							}
 						}"
+						type="Active"
 						numberUnit="{/currencyCode}"
-						numberState="{= ${products>UnitPrice} > ${/priceThreshold} ? 'Error' : 'Success' }">
-						<attributes>
-							<ObjectAttribute text="{products>QuantityPerUnit}"/>
-							<ObjectAttribute title="{i18n>stockValue}"
-								text="{
-									parts: [
-										{path: 'products>UnitPrice'},
-										{path: 'products>UnitsInStock'},
-										{path: '/currencyCode'}
-									],
-									formatter: '.formatStockValue'
-								}"/>
-						</attributes>
+						press=".onItemSelected">
 					</ObjectListItem>
-				</items>
+				</dependents>
 			</List>
 		</content>
 	</Panel>
