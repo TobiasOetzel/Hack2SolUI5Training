@@ -1,6 +1,6 @@
 /*global QUnit*/
 
-sap.ui.define([
+sap.ui.require([
 	"sap/ui/demo/bulletinboard/model/FlaggedType"
 ], function (FlaggedType) {
 	"use strict";
