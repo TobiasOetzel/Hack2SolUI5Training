@@ -3,7 +3,8 @@
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
 	<Table id="employeesTable"
-		items="{/Employees}">
+		items="{/Employees}"
+		itemPress=".onItemPressed">
 		<headerToolbar>
 			<Toolbar>
 				<Title text="{i18n>Employees}" level="H2"/>
@@ -24,7 +25,7 @@
 			<Column id="homePhoneCol" minScreenWidth="Tablet" demandPopin="true" hAlign="Right"><Text text="{i18n>Phone}"/></Column>
 		</columns>
 		<items>
-			<ColumnListItem>
+			<ColumnListItem type="Active">
 				<cells>
 					<Text text="{EmployeeID}"/>
 					<Text text="{FirstName}"/>

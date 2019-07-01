@@ -76,7 +76,7 @@ sap.ui.define([
 					var oSortItem = oEvent.getParameter("sortItem");
 					this._oRouterArgs.query.sortField = oSortItem.getKey();
 					this._oRouterArgs.query.sortDescending = oEvent.getParameter("sortDescending");
-					delete this._oRouterArgs.query.showDialog;
+					delete this._oRouterArgs.query.showDialog;		//else we would see the dialog again
 					oRouter.navTo("employeeOverview",this._oRouterArgs, true /*without history*/);
 				}.bind(this),
 				cancel : function (oEvent){
@@ -173,6 +173,19 @@ sap.ui.define([
 			// Note: no input validation is implemented here
 			this._oVSD.setSelectedSortItem(sSortField);
 			this._oVSD.setSortDescending(bSortDescending);
+		},
+
+		onItemPressed : function (oEvent) {
+			var oItem, oCtx;
+			oItem = oEvent.getParameter("listItem");
+			oCtx = oItem.getBindingContext();
+
+			this.getRouter().navTo("employeeResume",{
+				employeeId : oCtx.getProperty("EmployeeID"),
+				query : {
+					tab : "Info"
+				}
+			});
 		}
 
 	});
