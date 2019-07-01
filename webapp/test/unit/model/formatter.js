@@ -5,6 +5,7 @@ sap.ui.define([
 ], function (formatter) {
 	"use strict";
 
+
 	QUnit.module("Number unit");
 
 	function numberUnitValueTestCase(assert, sValue, fExpectedNumber) {
