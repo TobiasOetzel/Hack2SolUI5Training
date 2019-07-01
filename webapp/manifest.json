@@ -110,6 +110,22 @@
 					"viewName": "employee.Resume",
 					"viewLevel" : 4,
 					"transition": "flip"
+				},
+				"resumeTabHobbies": {
+					"parent": "employeeResume",
+					"viewId": "resumeHobbies",
+					"viewPath": "sap.ui.demo.nav.view.employee",
+					"viewName": "ResumeHobbies",
+					"controlId": "hobbiesTab",
+					"controlAggregation": "content"
+				},
+				"resumeTabNotes": {
+					"parent": "employeeResume",
+					"viewId": "resumeNotes",
+					"viewPath": "sap.ui.demo.nav.view.employee",
+					"viewName": "ResumeNotes",
+					"controlId": "notesTab",
+					"controlAggregation": "content"
 				}
 			}
 		}
