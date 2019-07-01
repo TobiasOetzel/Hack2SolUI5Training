@@ -26,7 +26,6 @@ sap.ui.define([
 
 		_onRouteMatched : function (oEvent) {
 			var oArgs, oView;
-
 			oArgs = oEvent.getParameter("arguments");
 			oView = this.getView();
 

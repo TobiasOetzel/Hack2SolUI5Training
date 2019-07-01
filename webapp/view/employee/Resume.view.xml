@@ -12,7 +12,9 @@
 				id="iconTabBar"
 				headerBackgroundDesign="Transparent"
 				class="sapUiResponsiveContentPadding"
-				binding="{Resume}">
+				binding="{Resume}"
+				select=".onTabSelect"
+				selectedKey="{view>/selectedTabKey}">
 				<items>
 					<IconTabFilter id="infoTab" text="{i18n>tabInfo}" key="Info">
 						<Text text="{Information}"/>
