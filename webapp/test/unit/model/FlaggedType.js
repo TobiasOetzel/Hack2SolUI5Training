@@ -2,7 +2,7 @@
 
 sap.ui.define([
 	"sap/ui/demo/bulletinboard/model/FlaggedType"
-], function (FlaggedType) {
+], function(FlaggedType) {
 	"use strict";
 
 	QUnit.module("FlaggedType - formatting");

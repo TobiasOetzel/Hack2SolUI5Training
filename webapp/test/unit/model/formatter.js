@@ -5,10 +5,9 @@ sap.ui.define([
 ], function (formatter) {
 	"use strict";
 
-
 	QUnit.module("Number unit");
 
-	function numberUnitValueTestCase(assert, sValue, fExpectedNumber) {
+	function numberUnitValueTestCase (assert, sValue, fExpectedNumber) {
 		// Act
 		var fNumber = formatter.numberUnit(sValue);
 
@@ -38,7 +37,7 @@ sap.ui.define([
 
 	QUnit.module("Price State");
 
-	function priceStateTestCase(oOptions) {
+	function priceStateTestCase (oOptions) {
 		// Act
 		var sState = formatter.priceState(oOptions.price);
 

@@ -30,7 +30,10 @@
 						<form:SimpleForm layout="ResponsiveGridLayout">
 							<form:content>
 								<Label text="{i18n>postDateLabel}"/>
-								<Text text="{Timestamp}"/>
+								<Text text="{
+									path: 'Timestamp',
+									formatter: '.formatter.date'
+								}"/>
 								<Label text="{i18n>postDescriptionLabel}"/>
 								<Text text="{Description}"/>
 							</form:content>

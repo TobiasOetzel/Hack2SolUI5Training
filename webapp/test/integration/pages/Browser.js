@@ -3,18 +3,18 @@ sap.ui.define([
 ], function (Opa5) {
 	"use strict";
 
-		Opa5.createPageObjects({
-			onTheBrowser: {
-				actions: {
-					iPressOnTheForwardButton: function () {
-						return this.waitFor({
-							actions: function () {
-								Opa5.getWindow().history.forward();
-							}
-						});
-					}
-				},
-				assertions: {}
-			}
-		});
+	Opa5.createPageObjects({
+		onTheBrowser: {
+			actions: {
+				iPressOnTheForwardButton: function () {
+					return this.waitFor({
+						actions: function () {
+							Opa5.getWindow().history.forward();
+						}
+					});
+				}
+			},
+			assertions: {}
+		}
 	});
+});
