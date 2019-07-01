@@ -16,7 +16,9 @@ sap.ui.require([
 				city: "Walldorf",
 				zip: "69190",
 				country: "Germany"
-			}
+			},
+			"salesToDate" : 12345.6789,
+			"currencyCode" : "EUR"
 		});
 
 		// Assign the model object to the SAPUI5 core
