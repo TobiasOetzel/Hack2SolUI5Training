@@ -18,7 +18,7 @@ Useful Links:
  * [UI5 Developer Center](http://scn.sap.com/community/developer-center/front-end) - Community for UI5
  * [Chrome Devtools](https://developers.google.com/web/tools/chrome-devtools/) - Debugging with Chrome
  * [UI5 troubleshooting](https://openui5.hana.ondemand.com/#/topic/615d9e4aaa34447fbd4aa5f19dfde9b8) - Debugging and logging hints for UI5
- * [Fiori Design](https://experience.sap.com/fiori-design-web/) - Debugging and logging hints for UI5
+ * [Fiori Design](https://experience.sap.com/fiori-design-web/) - SAP Fiori design guidelines
  * [DevDocs](http://devdocs.io/) - Various JS documentations in one place with offline support
  * [MDN JavaScript guide](https://developer.mozilla.org/de/docs/Web/JavaScript) - Learn JavaScript (complete guide to JS)
  * [JavaScript Garden](http://bonsaiden.github.io/JavaScript-Garden/) - Some basic concepts of javascript
